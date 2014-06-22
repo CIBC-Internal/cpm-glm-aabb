@@ -17,9 +17,9 @@ else()
     message(FATAL_ERROR "CPM requires Git.")
   endif()
   if (NOT EXISTS ${CPM_DIR}/CPM.cmake)
-    message(STATUS "Cloning repo (https://github.com/iauns/cpm)")
+    message(STATUS "Cloning repo (https://github.com/CIBC-Internal/cpm)")
     execute_process(
-      COMMAND "${GIT_EXECUTABLE}" clone https://github.com/iauns/cpm ${CPM_DIR}
+      COMMAND "${GIT_EXECUTABLE}" clone https://github.com/CIBC-Internal/cpm ${CPM_DIR}
       RESULT_VARIABLE error_code
       OUTPUT_QUIET ERROR_QUIET)
     if(error_code)
@@ -34,8 +34,8 @@ endif()
 #-----------------------------------------------------------------------
 # ++ MODULE: GLM
 CPM_AddModule("GLM"
-  GIT_REPOSITORY "https://github.com/iauns/cpm-glm"
-  GIT_TAG "1.0.2"
+  GIT_REPOSITORY "https://github.com/CIBC-Internal/cpm-glm"
+  GIT_TAG "origin/master"
   USE_EXISTING_VER TRUE
   EXPORT_MODULE TRUE    # Use EXPORT_MODULE sparingly. We expose GLM's interface
   )                     # through our own interface hence why we export it.
